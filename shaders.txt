@@ -25,9 +25,9 @@ optifine的着色器利用延迟渲染管线进行工作.
 There are at least 4 for all machines. For machines that can support it, there are 8. 
 在延迟着色器，合成着色器，最终着色器里，这些颜色附件由gcolor, gdepth, gnormal, composite, gaux1, gaux2, gaux3 和 gaux4 uniforms关键字来引用。
 (colortex0 到 colortex7 可以用于代替 gcolor, gdepth 等)
-尽管命名不一，但所有这些颜色附件都是相同的，除了前两个之外，它们可以用于任何目的.
-第一个关键字gcolor,在渲染之前会将颜色替换成当前的雾色。
-第二个关键字gdepth,在渲染之前将其颜色清除为纯白色，并使用适合存储深度值的更高精度的存储缓冲区。
+尽管命名不一，但所有这些颜色附件都是相同的，除了前两个之外，它们可以以任何方式使用.
+第一个关键字gcolor为画面纹理信息关键字，在渲染之前会将此纹理替换成当前的雾色。
+第二个关键字gdepth,为深度信息关键字，在渲染之前将其颜色清除为纯白色，并使用适合存储深度值的更高精度的存储缓冲区。
 剩下的关键字会在渲染前将各自的颜色替换成0 alpha通道的黑色。
 
 每个颜色附件使用两个缓存器，逻辑名分别为"main"和"alt", 它们可以被当成乒乓缓存器(ping-pong buffer)使用.
